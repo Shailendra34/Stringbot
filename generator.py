@@ -1,4 +1,4 @@
-#import Config
+from Config import API_ID, API_HASH, BOT_TOKEN
 #import logging
 #from pyromod import listen
 from pyrogram import Client, idle
