@@ -39,7 +39,7 @@ sᴛɪʟʟ ʀᴇᴀᴅɪɴɢ ?
             InlineKeyboardButton("⚜ 𝙃𝙤𝙬 𝙩𝙤 𝙐𝙨𝙚 ⚜", callback_data="help"),
             InlineKeyboardButton("🤟 𝘼𝙗𝙤𝙪𝙩 😎", callback_data="about")
         ],
-        [InlineKeyboardButton("💝 𝙎𝙪𝙥𝙥𝙤𝙧𝙩 ✨", url="https://t.me/DeeCodeBots")],
+        [InlineKeyboardButton("💝 𝙎𝙪𝙥𝙥𝙤𝙧𝙩 ✨", url="https://t.me/Yaaro_ki_yaarii")],
     ]
 
     # Help Message
