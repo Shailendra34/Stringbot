@@ -16,20 +16,21 @@ app = Client(
     api_id=Config.API_ID,
     api_hash=Config.API_HASH,
     bot_token=Config.BOT_TOKEN,
-    plugins=dict(root="StringSessionBot"),
+    plugins=dict(root="Stringbot"),
 )
 
+app.storage.SESSION_STRING_FORMAT = ">B?256sQ?"
 
 # Run Bot
 if __name__ == "__main__":
     try:
         app.start()
     except (ApiIdInvalid, ApiIdPublishedFlood):
-        raise Exception("ʏᴏᴜʀ API_ID/API_HASH ɪs ɴᴏᴛ ᴠᴀʟɪᴅ.")
+        raise Exception("ʏᴏᴜʀ API_ID/API_HASH ɪs ɴᴏᴛ ᴠᴀʟɪᴅ...")
     except AccessTokenInvalid:
-        raise Exception("ʏᴏᴜʀ BOT_TOKEN ɪs ɴᴏᴛ ᴠᴀʟɪᴅ.")
+        raise Exception("ʏᴏᴜʀ BOT_TOKEN ɪs ɴᴏᴛ ᴠᴀʟɪᴅ...")
     uname = app.get_me().username
-    print(f"@{uname} sᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ!")
+    print(f"@{uname} sᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ...")
     idle()
     app.stop()
-    print("ʙᴏᴛ sᴛᴏᴘᴘᴇᴅ ᴀʟᴠɪᴅᴀ...")
+    print("ʙᴏᴛ sᴛᴏᴘᴘᴇᴅ...")
