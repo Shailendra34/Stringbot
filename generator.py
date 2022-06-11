@@ -23,8 +23,8 @@ app.storage.SESSION_STRING_FORMAT = ">B?256sQ?"
 
 # Run Bot
 
-    app.start()
-    print("sᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ...")
-    idle()
-    app.stop()
-    print("ʙᴏᴛ sᴛᴏᴘᴘᴇᴅ...")
+app.start()
+print("sᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ...")
+idle()
+app.stop()
+print("ʙᴏᴛ sᴛᴏᴘᴘᴇᴅ...")
