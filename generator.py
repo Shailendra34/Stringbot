@@ -22,9 +22,15 @@ app = Client(
 app.storage.SESSION_STRING_FORMAT = ">B?256sQ?"
 
 # Run Bot
-
-app.start()
-print("sᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ...")
-idle()
-app.stop()
-print("ʙᴏᴛ sᴛᴏᴘᴘᴇᴅ...")
+if __name__ == "__main__":
+    try:
+        app.start()
+    except (ApiIdInvalid, ApiIdPublishedFlood):
+        raise Exception("ʏᴏᴜʀ API_ID/API_HASH ɪs ɴᴏᴛ ᴠᴀʟɪᴅ...")
+    except AccessTokenInvalid:
+        raise Exception("ʏᴏᴜʀ BOT_TOKEN ɪs ɴᴏᴛ ᴠᴀʟɪᴅ...")
+    uname = app.get_me().username
+    print(f"@{uname} sᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ...")
+    idle()
+    app.stop()
+    print("ʙᴏᴛ sᴛᴏᴘᴘᴇᴅ...")

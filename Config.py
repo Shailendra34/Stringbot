@@ -1,25 +1,31 @@
 import os
+from dotenv import load_dotenv
+
+# For Local Deploy
+if os.path.exists("Internal"):
+    load_dotenv("Internal")
+
 
 ENVIRONMENT = os.environ.get('ENVIRONMENT', False)
 
 if ENVIRONMENT:
     try:
-        API_ID = int(os.environ.get("API_ID", "15663735"))
+        API_ID = int(os.environ.get('API_ID', 0))
     except ValueError:
         raise Exception("Your API_ID is not a valid integer.")
-    API_HASH = os.environ.get("API_HASH", " 41ffd2a4ee5614e9a9269bdb818dcda3")
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "5015892079:AAFa2B4p7lGv7isApfpzpb0hnsRz9LAE7CE")
-    DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://BOT34:BOT34@cluster0.2dh9k.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+    API_HASH = os.environ.get('API_HASH', None)
+    BOT_TOKEN = os.environ.get('BOT_TOKEN', None)
+    DATABASE_URL = os.environ.get('DATABASE_URL', None)
     DATABASE_URL = DATABASE_URL.replace("postgres", "postgresql") 
-    MUST_JOIN = os.environ.get("MUST_JOIN", " HeroOfficialBots")
+    MUST_JOIN = os.environ.get('MUST_JOIN', None)
     if MUST_JOIN.startswith("@"):
         MUST_JOIN = MUST_JOIN.replace("@", "")
 else:
-    API_ID = 15663735
-    API_HASH = "41ffd2a4ee5614e9a9269bdb818dcda3"
-    BOT_TOKEN = "5015892079:AAFa2B4p7lGv7isApfpzpb0hnsRz9LAE7CE"
-    DATABASE_URL = "mongodb+srv://BOT34:BOT34@cluster0.2dh9k.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+    API_ID = 0
+    API_HASH = ""
+    BOT_TOKEN = ""
+    DATABASE_URL = ""
     DATABASE_URL = DATABASE_URL.replace("postgres", "postgresql")
-    MUST_JOIN = "HeroOfficialBots"
+    MUST_JOIN = ""
     if MUST_JOIN.startswith("@"):
         MUST_JOIN = MUST_JOIN[1:]
